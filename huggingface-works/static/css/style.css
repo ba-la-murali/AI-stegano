@@ -1,0 +1,240 @@
+/* Main Styles */
+:root {
+    --primary-color: #6c5ce7;
+    --secondary-color: #a29bfe;
+    --text-color: #2d3436;
+    --bg-color: #f9f9f9;
+    --card-bg: #ffffff;
+    --error-color: #e74c3c;
+    --success-color: #2ecc71;
+    --border-radius: 8px;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    color: #636e72;
+}
+
+/* Form Styles */
+.form-section {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+textarea, select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border 0.3s;
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+textarea:focus, select:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.2);
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+button:hover {
+    background-color: #5f51e5;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+#clear-btn {
+    background-color: #cbd5e0;
+    color: #4a5568;
+}
+
+#clear-btn:hover {
+    background-color: #a0aec0;
+}
+
+#download-btn {
+    margin-top: 1rem;
+    background-color: var(--success-color);
+}
+
+#download-btn:hover {
+    background-color: #27ae60;
+}
+
+/* Results Section */
+.result-section {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    margin-top: 2rem;
+}
+
+.result-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.result-info {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: rgba(108, 92, 231, 0.1);
+    border-radius: var(--border-radius);
+}
+
+.image-container {
+    text-align: center;
+    margin: 1.5rem 0;
+}
+
+.image-container img {
+    max-width: 100%;
+    max-height: 600px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+/* Loading Spinner */
+#loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(108, 92, 231, 0.3);
+    border-radius: 50%;
+    border-top-color: var(--primary-color);
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Error Messages */
+#error-message {
+    background-color: rgba(231, 76, 60, 0.1);
+    color: var(--error-color);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    margin: 1.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#error-message i {
+    font-size: 1.5rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 2rem;
+    color: #636e72;
+}
+
+footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    .form-section, .result-section {
+        padding: 1.5rem;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    button {
+        width: 100%;
+    }
+}
